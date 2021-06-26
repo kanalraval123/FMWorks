@@ -56,7 +56,6 @@ public class UploadImageController extends HttpServlet {
                          fileItem.write(new File(path+filename));
                          DatabaseConnectivity databaseConnectivity = DatabaseConnectivity.getInstance();
                          databaseConnectivity.openConnection();
-                         System.out.println(path);
                          String sql = "insert product_image(name) values('"+filename+"')";
                          databaseConnectivity.excuteData(sql);
                          databaseConnectivity.closeConnection();
